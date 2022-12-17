@@ -14,14 +14,14 @@ namespace PolinomAlgoritmasi1
             double sonuc = 0;
             int i = 0;
 
-            while (i<dizi.Length)
+            while (i < dizi.Length)
             {
-                sonuc = sonuc + (dizi[i]*Math.Pow(x,i));
+                sonuc = sonuc + (dizi[i] * Math.Pow(x, i));
                 i++;
             }
             return sonuc;
-            
-        } 
+
+        }
 
         public static void Main(string[] args)
         {
@@ -29,17 +29,16 @@ namespace PolinomAlgoritmasi1
 
             double[] dizi = new double[5];
 
-            dizi[0] = Convert.ToDouble(Console.ReadLine());
-            dizi[1] = Convert.ToDouble(Console.ReadLine());
-            dizi[2] = Convert.ToDouble(Console.ReadLine());
-            dizi[3] = Convert.ToDouble(Console.ReadLine());
-            dizi[4] = Convert.ToDouble(Console.ReadLine());
+            for (int i = 0; i < dizi.Length; i++)
+            {
+                dizi[i] = Convert.ToDouble(Console.ReadLine());
+            }
 
             Console.Write("Lütfen bir X değeri giriniz : ");
             string degerx = Console.ReadLine();
             double x = Convert.ToDouble(degerx);
 
-            Console.WriteLine(Polinomhesaplama( dizi,x ));
+            Console.WriteLine("Sonuç : " + Polinomhesaplama(dizi, x));
             Console.ReadLine();
 
         }
