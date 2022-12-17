@@ -32,7 +32,13 @@ namespace OkekObebAlgoritma
                 }
             }
             return sayi1;
-            
+
+        }
+
+        public static int OkekHesaplama(int sayi1, int sayi2)
+        {
+            int OkekHesaplama = (sayi1 * sayi2) / (ObebHesaplama(sayi1, sayi2));
+            return OkekHesaplama;
         }
 
 
@@ -46,15 +52,11 @@ namespace OkekObebAlgoritma
             Console.Write("Lütfen BÜYÜK sayıyı giriniz : ");
             int sayi2 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(ObebHesaplama(sayi1, sayi2));
-
-            int OkekHesaplama = (sayi1 * sayi2) / (ObebHesaplama(sayi1,sayi2));
-
-            Console.WriteLine("OKEK :"+OkekHesaplama);
+            Console.WriteLine("OKEK :" + OkekHesaplama(sayi1, sayi2));
             Console.WriteLine("OBEB : " + ObebHesaplama(sayi1, sayi2));
 
             Console.ReadLine();
-           
+
 
         }
     }
