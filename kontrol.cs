@@ -40,7 +40,6 @@ namespace Kontrol
             }
 
             Console.Write(" }");
-
         }
 
         public static void HarfDongu(bool sonuc)
