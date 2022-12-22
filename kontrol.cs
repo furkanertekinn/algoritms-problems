@@ -56,7 +56,6 @@ namespace Kontrol
 
                 continue;
             }
-
         }
         public static void Main(string[] args)
         {
