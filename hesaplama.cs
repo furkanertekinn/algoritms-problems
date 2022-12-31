@@ -8,7 +8,7 @@ namespace Hesapla
 {
     internal class Program
     {
-        public static void Hesapla(string isim,string dogumYil,double dogumYilInt)
+        public static void Hesapla(string isim)
         {
             double aritmatikOrt = 0;
             double geometrikOrt = 0;
@@ -16,7 +16,11 @@ namespace Hesapla
             double rakamtoplam = 0;
             double rakamcarpim = 1;
 
-            if (isim.Length<4)
+            int konumNoktaliVirgul = isim.IndexOf(";");
+
+            double dogumYilInt = Convert.ToDouble(isim.Substring(konumNoktaliVirgul + 1, 4));
+
+            if (isim.Length < 4)
             {
                 while (0 < dogumYilInt)
                 {
@@ -25,20 +29,20 @@ namespace Hesapla
                 }
 
                 aritmatikOrt = rakamtoplam / 4;
-                Console.WriteLine("Doğum yılınızın aritmatik ortalaması : "+aritmatikOrt);
+                Console.WriteLine("Doğum yılınızın aritmatik ortalaması : " + aritmatikOrt);
             }
 
-            else if (4<=isim.Length)
+            else if (4 <= isim.Length)
             {
-                while (0<dogumYilInt)
+                while (0 < dogumYilInt)
                 {
-                    
-                    for (int i = 0; i <((long)dogumYilInt); i++)
+
+                    for (int i = 0; i < ((long)dogumYilInt); i++)
                     {
-                        rakamcarpim *= (dogumYilInt % 10);                      
-                        dogumYilInt /= 10;                      
+                        rakamcarpim *= (dogumYilInt % 10);
+                        dogumYilInt /= 10;
                     }
-                    break;              
+                    break;
                 }
                 geometrikOrt = Math.Pow(rakamcarpim, (0.25));
                 Console.WriteLine("Doğum yılınızın geometrik ortalaması : " + geometrikOrt);
@@ -48,28 +52,19 @@ namespace Hesapla
             {
                 Console.WriteLine("Lütfen geçerli bir değer giriniz!");
             }
-            
-        }
 
+        }
 
         static void Main(string[] args)
         {
-            Console.Write("Lütfen isminizi giriniz : ");
-            string isim=Console.ReadLine();
-
-            Console.WriteLine(" ");
-
-            Console.Write("Lütfen doğum yılınızı giriniz : ");
-            string dogumYil=Console.ReadLine();
-            double dogumYilInt = Convert.ToInt32(dogumYil);
+            Console.Write("Lütfen isminizi ve doğum yılınızı arada virgül(;) olarak giriniz : ");
+            string isim = Console.ReadLine();
 
             Console.Clear();
 
-            Console.WriteLine(isim+";"+dogumYil);
-
             Console.WriteLine(" ");
 
-            Hesapla(isim, dogumYil,dogumYilInt);
+            Hesapla(isim);
 
             Console.ReadLine();
         }
